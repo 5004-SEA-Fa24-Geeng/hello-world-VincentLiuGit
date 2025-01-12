@@ -7,11 +7,63 @@ The following report contains questions you need to answer as part of your submi
 Please link your UML design file here. See resources in the assignment on how to
 link an image in markdown. You may also use [mermaid] class diagrams if you prefer, if so, include the mermaid code here.  You DO NOT have to include Greeting.java as part of the diagram, just the AlohaWorld application that includes: [AlohaWorld.java], [Greeter.java], and [ConsoleView.java].
 
+```mermaid
+---
+title: Aloha World UML
+---
+classDiagram
+    direction LR
+    AlohaWorld --> Greeter : has a
+    AlohaWorld --> ConsoleView : uses
+    ConsoleView --> Greeter : uses
+    class AlohaWorld {
+        + main(String[] args) : void
+    }
+    class Greeter {
+        - name : String
+        - locality : int
+        - localityList : List<String>
+        - HAWAII : int
+        - CHINA : int
+        - ITALY : int
+        - DEFAULT_LOCALITY : int
+        + Greeter(String name)
+        + Greeter(String name, int locality)
+        + getName() : String
+        + getLocality() : String
+        + setLocality(int locality) : void
+        + greet() : String
+        + greet(boolean asciiOnly) : String
+        + getLocalityString() : String
+        + hashCode() : int
+        + equals(Object obj) : boolean
+        + toString() : String
+        + getLocalityList() : List<String>
+    }
+    class ConsoleView {
+        - SCANNER : Scanner
+        - LOCALITY_OPTIONS : List<String>
+        + ConsoleView()
+        + getName() : String
+        + getLocality() : int
+        + checkRunAgain() : boolean
+        + printGreeting(String greeting) : void
+    }
+```
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
 
+As soon as we hit the run button in AlohaWorld.java, a "Welcome, what is your name? " string will pop up in the terminal.
+After we type in our name and choose a locality, the program will send the name and locality as parameters to Greeter.java and 
+create a Greeter object called greeter. Depending on the locality that we chose, the greet method in Greeter.java will return
+a string in either English, Chinese, Italian, or Hawaiian. The program then send this greeting to ConsoleView.java and use the printGreeting
+method to print out the greeting in terminal. Last, the program will ask us whether we want to rerun the program or not.
+If we chose yes, the program will ask us what's our locality again and set the new locality using setLocality nethod in Greeter.java then
+print out the result. If not, the program ends here. However, the while loop is not written in the way as it's intented. If we did really choose
+yes, the program will be shut down. because of the condition code on line 52 in AlohaWorld.java. We need to delete the exclamation mark in order
+to get the result we want.
 
 ## Assignment Questions
 
