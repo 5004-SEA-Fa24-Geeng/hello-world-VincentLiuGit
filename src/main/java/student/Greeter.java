@@ -192,7 +192,10 @@ public class Greeter {
         if (locality < 1 || locality >= localityList.size()) {
             return "USA";
         }
-        return localityList.get(locality);
+        // list index starts from 0
+        // the index of Hawaii is 0
+        String list_locality  = localityList.get(locality - 1);
+        return list_locality;
     }
 
     /**
