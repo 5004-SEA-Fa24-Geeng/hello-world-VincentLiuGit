@@ -110,7 +110,7 @@ public class Greeting {
      */
     public String toString() {
         String formatStr = "{localityID:%d, localityName:\"%s\""
-                        + ", asciiGreeting:\"%s\",unicodeGreeting:\"%s\"}";
+                        + ", asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}";
         String str = String.format(formatStr, this.localityID,
                     this.localityName, this.asciiGreeting, this.unicodeGreeting);
         return str;
