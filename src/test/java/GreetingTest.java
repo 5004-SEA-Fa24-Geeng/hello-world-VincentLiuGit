@@ -90,11 +90,11 @@ public class GreetingTest {
     @Test
     public void testToString() {
         assertEquals("{localityID:2, localityName:\"USA\", asciiGreeting:\"Hello\""
-                    + ",unicodeGreeting:\"Hello\"}", usa.toString());
+                    + ", unicodeGreeting:\"Hello\"}", usa.toString());
         assertEquals("{localityID:1, localityName:\"Hawaii\", asciiGreeting:\"Aloha\""
-                    + ",unicodeGreeting:\"Aloha\"}", hawaii.toString());
+                    + ", unicodeGreeting:\"Aloha\"}", hawaii.toString());
         assertEquals("{localityID:3, localityName:\"China\", asciiGreeting:\"Ni Hao\""
-                    + ",unicodeGreeting:\"你好\"}", china.toString());
+                    + ", unicodeGreeting:\"你好\"}", china.toString());
     }
 
     /**
