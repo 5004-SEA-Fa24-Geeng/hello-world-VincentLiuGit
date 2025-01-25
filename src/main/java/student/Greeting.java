@@ -7,15 +7,15 @@ package student;
  *
  */
 public class Greeting {
-    /** int value of localityID */
+    /** int value of localityID. */
     private int localityID;
-    /** String value of localityName */
+    /** String value of localityName. */
     private String localityName;
-    /** String value of asciiGreeting */
+    /** String value of asciiGreeting. */
     private String asciiGreeting;
-    /** String value of unicodeGreeting */
+    /** String value of unicodeGreeting. */
     private String unicodeGreeting;
-    /** String value of formatStr */
+    /** String value of formatStr. */
     private String formatStr;
 
     /**
@@ -114,10 +114,6 @@ public class Greeting {
         String str = String.format(formatStr, this.localityID, 
                     this.localityName, this.asciiGreeting, this.unicodeGreeting);
         return str;
-    }
-
-    public static void main(String[] args) {
-
     }
 
 }
